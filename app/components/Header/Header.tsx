@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,90 +9,50 @@ const Header = () => {
   };
 
   return (
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <div className="text-2xl font-bold text-gray-800">
-            Datascape
-          </div>
-
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden flex items-center"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <svg 
-              className="w-6 h-6 text-gray-600" 
-              fill="none" 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth="2" 
-              viewBox="0 0 24 24" 
-              stroke="currentColor"
-            >
-              {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+      <header className="bg-gray-900 shadow-lg py-4">
+        <div className="container mx-auto px-6 flex justify-between items-center">
+          <div className="text-2xl font-bold text-white">Datascape</div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-4">
-              <li>
-                <a href="/" className="text-gray-600 hover:text-gray-800">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="text-gray-600 hover:text-gray-800">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/services" className="text-gray-600 hover:text-gray-800">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-gray-600 hover:text-gray-800">
-                  Contact
-                </a>
-              </li>
-            </ul>
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="/" className="text-gray-300 hover:text-white">Home</a>
+            <a href="/about" className="text-gray-300 hover:text-white">About Us</a>
+            <a href="/services" className="text-gray-300 hover:text-white">Services</a>
+            <a href="/consulting" className="text-gray-300 hover:text-white">Consulting</a>
+            <a href="/contact" className="text-gray-300 hover:text-white">Contact</a>
+
+            {/* Login and Signup Buttons */}
+            <div className="ml-8 flex space-x-4">
+              <a href="/login" className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 transition">Login</a>
+              <a href="/signup" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition">Signup</a>
+            </div>
           </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+              className="md:hidden flex items-center focus:outline-none"
+              onClick={toggleMenu}
+          >
+            <span className="text-white">{isMenuOpen ? "✖" : "☰"}</span>
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <nav className="px-4 py-3 bg-white border-t">
-              <ul className="space-y-2">
-                <li>
-                  <a href="/" className="block py-2 text-gray-600 hover:text-gray-800">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="block py-2 text-gray-600 hover:text-gray-800">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="/services" className="block py-2 text-gray-600 hover:text-gray-800">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="block py-2 text-gray-600 hover:text-gray-800">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+            <div className="md:hidden bg-gray-900 border-t border-gray-700 py-4">
+              <nav className="flex flex-col items-center space-y-4">
+                <a href="/" className="text-gray-300 hover:text-white">Home</a>
+                <a href="/about" className="text-gray-300 hover:text-white">About Us</a>
+                <a href="/services" className="text-gray-300 hover:text-white">Services</a>
+                <a href="/consulting" className="text-gray-300 hover:text-white">Consulting</a>
+                <a href="/contact" className="text-gray-300 hover:text-white">Contact</a>
+
+                <div className="flex space-x-4 mt-4">
+                  <a href="/login" className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600">Login</a>
+                  <a href="/signup" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500">Signup</a>
+                </div>
+              </nav>
+            </div>
         )}
       </header>
   );
