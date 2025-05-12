@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/app": "^0.12.1",
+    "@firebase/auth": "^1.10.2",
+    "firebase": "^11.7.1",
+    "framer-motion": "^12.11.0",
     "lucide-react": "^0.509.0",
     "next": "15.3.2",
     "react": "^19.0.0",
