@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { initializeApp } from "@firebase/app";
+import { useRouter } from "next/navigation";
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
@@ -13,7 +14,6 @@ const firebaseConfig = {
     measurementId: "G-W7SG4LSQ9X"
 };
 
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -23,6 +23,7 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const [error, setError] = useState("");
+    const router = useRouter();
 
     const handleEmailSignup = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,7 +31,9 @@ const Signup = () => {
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             console.log("User Registered: ", userCredential.user);
-            //    router.push("/");  // ✅ Redirect to home page
+            const token = await userCredential.user.getIdToken();
+            localStorage.setItem("accessToken", token); 
+            router.push("/");  // ✅ Redirect to home page
         } catch (error: any) {
             setError(error.message);
             console.error("Error signing up with email/password: ", error);
@@ -42,6 +45,9 @@ const Signup = () => {
             const result = await signInWithPopup(auth, provider);
             console.log("User Info: ", result.user);
             //  router.push("/");  // ✅ Redirect to home page
+            const token = await result.user.getIdToken();   
+            localStorage.setItem("accessToken", token); 
+            router.push("/");  // ✅ Redirect to home page  
         } catch (error: any) {
             setError(error.message);
             console.error("Error signing in with Google: ", error);

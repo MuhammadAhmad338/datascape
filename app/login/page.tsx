@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { initializeApp } from "@firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "@firebase/auth";
@@ -19,16 +19,18 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 const Login = () => {
-    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
     const [error, setError] = useState("");
-    //const router = useRouter();
+    const router = useRouter();
 
     const handleGoogleSignIn = async () => {
         try {
             const result = await signInWithPopup(auth, provider);
+            const token = await result.user.getIdToken();
+            localStorage.setItem("accessToken", token);
             console.log("User Info: ", result.user);
-            //      router.push("/");  // ✅ Redirect to home page
+            router.push("/");  // ✅ Redirect to home page
         } catch (error) {
             console.error("Error signing in with Google: ", error);
         }
@@ -39,6 +41,9 @@ const Login = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             console.log("User Info: ", userCredential.user);
+            const token = await userCredential.user.getIdToken();
+            localStorage.setItem("accessToken", token);
+            router.push("/");  // ✅ Redirect to home page
         } catch (error: any) {
             setError(error.message);
             console.error("Error signing in with email/password: ", error);

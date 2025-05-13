@@ -36,7 +36,7 @@ const Services = () => {
 
     return (
         <section className="bg-gray-100 py-20">
-            <div className="container mx-auto px-6 text-center">
+            <div className="container hover:cursor-pointer mx-auto px-6 text-center">
                 <div className="text-center">
                     <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">What We Offer</h2>
                     <h3 className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Our Services</h3>

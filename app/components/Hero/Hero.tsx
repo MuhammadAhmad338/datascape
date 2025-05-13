@@ -20,13 +20,13 @@ const HeroComponent = () => {
                 }}
             ></div>
 
-            <div className="container mx-auto relative z-10 text-center">
+            <div className="container mb-12 mx-auto relative z-10 text-center mt-[-60px] md:mt-[-80px] px-4">
                 {/* Hero Text with Framer Motion for Smoother Animation */}
                 <motion.h1
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="text-5xl md:text-7xl font-extrabold mb-6 leading-snug tracking-wide"
+                    className="text-5xl md:text-7xl font-extrabold mb-10 leading-snug tracking-wide"
                 >
                     Transform Your Business with Cutting-Edge Solutions
                 </motion.h1>
@@ -44,7 +44,7 @@ const HeroComponent = () => {
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-indigo-600 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300"
+                    className="bg-indigo-600 hover:cursor-pointer text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300"
                 >
                     Learn More
                 </motion.button>
