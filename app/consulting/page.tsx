@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
-import Layout from "../components/layout/page";
+import ProtectedRoute from "../components/ProtectedRoute/ProtectedRoute";
+
 const Consulting = () => {
     const services = [
         {
@@ -25,6 +27,7 @@ const Consulting = () => {
     ];
 
     return (
+        <ProtectedRoute>
             <section className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900  text-white">
                 <div className="container mx-auto px-6 text-center pt-10 pb-10">
                     <h2 className="text-4xl font-bold mb-12">Consulting Services</h2>
@@ -59,6 +62,7 @@ const Consulting = () => {
                     </div>
                 </div>
             </section>
+        </ProtectedRoute>
     );
 };
 

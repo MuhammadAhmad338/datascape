@@ -1,6 +1,6 @@
 "use client"
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const AboutUs = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +10,7 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <section className="min-h-screen flex flex-col bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 py-32 px-8 lg:py-44 text-white overflow-hidden relative">
+        <section className="min-h-screen flex flex-col  py-32 px-8 lg:py-44 text-black overflow-hidden relative">
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-30"
                 style={{
@@ -33,38 +33,38 @@ const AboutUs = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                    className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto"
+                    className="text-lg md:text-xl text-gray-800 mb-10 max-w-3xl mx-auto"
                 >
                     At Datascape, we harness the power of technology to transform businesses into digital leaders. Our team of experts delivers exceptional solutions in web development, mobile apps, and enterprise systems, driving success in the modern digital landscape.
                 </motion.p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
                     <motion.div
-                        className="bg-gray-800 p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <h3 className="text-xl font-bold mb-4">Our Mission</h3>
-                        <p className="text-gray-400">
+                        <h3 className="text-xl text-white font-bold mb-4">Our Mission</h3>
+                        <p className="text-white">
                             Empower businesses to achieve digital excellence through cutting-edge solutions and strategic insights.
                         </p>
                     </motion.div>
 
                     <motion.div
-                        className="bg-gray-800 p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <h3 className="text-xl font-bold mb-4">Our Vision</h3>
-                        <p className="text-gray-400">
+                        <h3 className="text-xl text-white font-bold mb-4">Our Vision</h3>
+                        <p className="text-white">
                             To be a global leader in digital transformation, redefining industries with innovative technology.
                         </p>
                     </motion.div>
 
                     <motion.div
-                        className="bg-gray-800 p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
+                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
                         whileHover={{ scale: 1.05 }}
                     >
-                        <h3 className="text-xl font-bold mb-4">Our Values</h3>
-                        <p className="text-gray-400">
+                        <h3 className="text-xl text-white font-bold mb-4">Our Values</h3>
+                        <p className="text-white">
                             Integrity, Innovation, and Impact – the core values that drive our every endeavor.
                         </p>
                     </motion.div>

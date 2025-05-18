@@ -48,7 +48,7 @@ const Services = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white p-8 rounded-lg transition-transform transform hover:scale-105 hover:translate-y-4 hover:shadow-xl duration-300"
+                            className="bg-white p-8 rounded-2xl border border-gray-200"
                         >
                             <div className="text-6xl mb-6 text-indigo-600 transition-all duration-300 transform hover:scale-125">
                                 {service.icon}
@@ -56,12 +56,11 @@ const Services = () => {
                             <h3 className="text-2xl font-semibold text-gray-800 mb-4">{service.title}</h3>
                             <p className="text-gray-600 text-md mb-6">{service.description}</p>
                             <div className="mt-6">
-                                <a
-                                    href="#"
-                                    className="inline-block bg-indigo-600 text-white px-8 py-4 rounded-full shadow-lg transform hover:scale-110 hover:bg-indigo-700 transition-all duration-300"
+                                <button
+                                    className="inline-block hover:cursor-pointer bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700"
                                 >
                                     Learn More
-                                </a>
+                                </button>
                             </div>
                         </div>
                     ))}

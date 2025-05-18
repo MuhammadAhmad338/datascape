@@ -44,7 +44,6 @@ const Signup = () => {
         try {
             const result = await signInWithPopup(auth, provider);
             console.log("User Info: ", result.user);
-            //  router.push("/");  // ✅ Redirect to home page
             const token = await result.user.getIdToken();   
             localStorage.setItem("accessToken", token); 
             router.push("/");  // ✅ Redirect to home page  
