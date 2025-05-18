@@ -10,64 +10,47 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <section className="min-h-screen flex flex-col  py-32 px-8 lg:py-44 text-black overflow-hidden relative">
+        <section className="min-h-screen flex flex-col py-32 px-8 lg:py-44 text-white overflow-hidden relative bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900">
             <div
-                className="absolute inset-0 bg-cover bg-center opacity-30"
+                className="absolute inset-0 bg-cover bg-center opacity-20 blur-lg"
                 style={{
                     backgroundImage: "url('https://your-background-image-url.com')",
-                    maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,1) 100%)",
                 }}
             ></div>
 
-            <div className="container mb-12 mx-auto relative z-10 text-center mt-[-60px] md:mt-[-80px] px-4">
+            <div className="container mx-auto relative z-10 text-center px-4">
                 <motion.h1
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight tracking-wide"
+                    className="text-5xl md:text-7xl font-extrabold mb-8 tracking-wide drop-shadow-lg"
                 >
                     About Datascape
                 </motion.h1>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
                     transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                    className="text-lg md:text-xl text-gray-800 mb-10 max-w-3xl mx-auto"
+                    className="text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto drop-shadow-lg"
                 >
                     At Datascape, we harness the power of technology to transform businesses into digital leaders. Our team of experts delivers exceptional solutions in web development, mobile apps, and enterprise systems, driving success in the modern digital landscape.
                 </motion.p>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-4">
-                    <motion.div
-                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        <h3 className="text-xl text-white font-bold mb-4">Our Mission</h3>
-                        <p className="text-white">
-                            Empower businesses to achieve digital excellence through cutting-edge solutions and strategic insights.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        <h3 className="text-xl text-white font-bold mb-4">Our Vision</h3>
-                        <p className="text-white">
-                            To be a global leader in digital transformation, redefining industries with innovative technology.
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        className="bg-gray-800 hover:cursor-pointer p-8 rounded-lg shadow-lg hover:scale-105 transition-transform"
-                        whileHover={{ scale: 1.05 }}
-                    >
-                        <h3 className="text-xl text-white font-bold mb-4">Our Values</h3>
-                        <p className="text-white">
-                            Integrity, Innovation, and Impact – the core values that drive our every endeavor.
-                        </p>
-                    </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+                    {['Our Mission', 'Our Vision', 'Our Values'].map((title, index) => (
+                        <motion.div
+                            key={index}
+                            className="bg-gray-700 bg-opacity-60 p-6 rounded-lg hover:cursor-pointer"
+                        >
+                            <h3 className="text-xl text-white font-semibold mb-4">{title}</h3>
+                            <p className="text-gray-300">
+                                {title === 'Our Mission' && 'Empower businesses to achieve digital excellence through cutting-edge solutions and strategic insights.'}
+                                {title === 'Our Vision' && 'To be a global leader in digital transformation, redefining industries with innovative technology.'}
+                                {title === 'Our Values' && 'Integrity, Innovation, and Impact – the core values that drive our every endeavor.'}
+                            </p>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>

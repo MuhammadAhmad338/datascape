@@ -34,9 +34,9 @@ const Header = () => {
     setIsLoggedIn(false);
     window.location.href = "/";
   }
-
+// ...existing code...
   return (
-    <header className="bg-black shadow-lg py-4">
+    <header className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 shadow-lg py-4">
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="text-3xl font-extrabold text-white tracking-tight transition-colors">
           Datascape
@@ -44,28 +44,25 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-gray-300 hover:text-white  text-lg transition-colors">Home</Link>
-          <Link href="/aboutus" className="text-gray-300 hover:text-white  text-lg transition-colors">AboutUs</Link>
+          <Link href="/" className="text-white hover:text-gray-300 text-lg transition-colors">Home</Link>
+          <Link href="/aboutus" className="text-white hover:text-gray-300 text-lg transition-colors">AboutUs</Link>
           <button
             onClick={toggleServices}
-            className={`text-gray-300 hover:text-white hover:cursor-pointer text-lg transition-colors ${showServices ? 'text-blue-400' : ''
-              }`}
+            className={`text-white hover:text-gray-300 hover:cursor-pointer text-lg transition-colors ${showServices ? '' : ''}`}
           >
             Services
           </button>
-          <Link href="/consulting" className="text-gray-300 hover:text-white text-lg transition-colors">Consulting</Link>
-          <Link href="/contactus" className="text-gray-300 hover:text-white  text-lg transition-colors">Contact</Link>
+          <Link href="/consulting" className="text-white hover:text-gray-300 text-lg transition-colors">Consulting</Link>
+          <Link href="/contactus" className="text-white hover:text-gray-300 text-lg transition-colors">Contact</Link>
 
           {/* Login/Signup or Get Started Button */}
           <div className="ml-8 flex space-x-4">
-        
-
             {!loading && isLoggedIn && (
               <>
-                <Link href="/getstarted" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-500 transition">
+                <Link href="/getstarted" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                   Get Started
                 </Link>
-                <div onClick={logOut} className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 hover:cursor-pointer text-white px-4 py-2 rounded hover:bg-gray-500 transition">
+                <div onClick={logOut} className="bg-red-600 hover:cursor-pointer text-white px-4 py-2 rounded hover:bg-red-700 transition">
                   Log Out
                 </div>
               </>
@@ -73,8 +70,8 @@ const Header = () => {
 
             {!loading && !isLoggedIn && (
               <>
-                <Link href="/login" className="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 transition ">Login</Link>
-                <Link href="/signup" className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-500 transition ">Signup</Link>
+                <Link href="/login" className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition">Login</Link>
+                <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Signup</Link>
               </>
             )}
           </div>
@@ -91,29 +88,28 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-900 border-t border-gray-700 py-4">
+        <div className="md:hidden bg-gray-800 border-t border-gray-700 py-4">
           <nav className="flex flex-col items-center space-y-4">
-            <a href="/" className="text-gray-300 hover:text-white text-lg transition-colors">Home</a>
-            <a href="/about" className="text-gray-300 hover:text-white text-lg transition-colors">About Us</a>
+            <a href="/" className="text-white hover:text-gray-300 text-lg transition-colors">Home</a>
+            <a href="/about" className="text-white hover:text-gray-300 text-lg transition-colors">About Us</a>
             <button
               onClick={toggleServices}
-              className={`text-gray-300 hover:text-white text-lg transition-colors ${showServices ? 'text-blue-400' : ''
-                }`}
+              className={`text-white hover:text-gray-300 text-lg transition-colors ${showServices ? 'text-blue-400' : ''}`}
             >
               Services
             </button>
-            <a href="/consulting" className="text-gray-300 hover:text-white text-lg transition-colors">Consulting</a>
-            <a href="/contact" className="text-gray-300 hover:text-white text-lg transition-colors">Contact</a>
+            <a href="/consulting" className="text-white hover:text-gray-300 text-lg transition-colors">Consulting</a>
+            <a href="/contact" className="text-white hover:text-gray-300 text-lg transition-colors">Contact</a>
 
             <div className="flex space-x-4 mt-4">
               {loading ? (
-                <div className="text-gray-300">Loading...</div>
+                <div className="text-white">Loading...</div>
               ) : isLoggedIn ? (
-                <a href="/getstarted" className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-500 ">Get Started</a>
+                <a href="/getstarted" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Get Started</a>
               ) : (
                 <>
-                  <a href="/login" className="bg-gray-700 text-white py-2 px-4 rounded hover:bg-gray-600 ">Login</a>
-                  <a href="/signup" className="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-500 ">Signup</a>
+                  <a href="/login" className="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700">Login</a>
+                  <a href="/signup" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Signup</a>
                 </>
               )}
             </div>
@@ -122,6 +118,7 @@ const Header = () => {
       )}
     </header>
   );
+
 };
 
 export default Header;

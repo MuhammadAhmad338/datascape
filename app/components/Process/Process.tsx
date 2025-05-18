@@ -30,21 +30,16 @@ const Process = () => {
     ];
 
     return (
-        <section className="bg-gray-100 py-20">
+        <section className="bg-gray-50 py-20">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-4xl font-bold text-gray-800 mb-20">Our Process</h2>
-                <div className="flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0 md:space-x-8">
+                <h2 className="text-4xl font-bold text-gray-800 mb-12">Our Process</h2>
+                <div className="relative flex justify-between items-center space-x-4">
                     {steps.map((step, index) => (
-                        <div
-                            key={index}
-                            className="relative flex flex-col items-center md:items-start text-center md:text-left"
-                        >
-                            <div className="text-5xl mb-4 text-indigo-600">{step.icon}</div>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-2">{step.title}</h3>
-                            <p className="text-gray-600 max-w-xs">{step.description}</p>
-                            {index !== steps.length - 1 && (
-                                <div className="hidden md:block w-16 h-px bg-gray-300 mt-6"></div>
-                            )}
+                        <div key={index} className="flex flex-col items-center">
+                            <div className="text-5xl mb-2 text-indigo-600">{step.icon}</div>
+                        
+                            <h3 className="text-lg font-semibold text-gray-800 mb-1">{step.title}</h3>
+                            <p className="text-gray-600 text-sm max-w-xs">{step.description}</p>
                         </div>
                     ))}
                 </div>
