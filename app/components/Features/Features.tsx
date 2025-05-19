@@ -48,7 +48,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-gray-800 via-gray-900 to-black py-20">
+    <section className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 py-20">
       <div className="container hover:cursor-pointer mx-auto px-6 text-center">
         <div className="text-center">
           <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">What We Offer</h2>

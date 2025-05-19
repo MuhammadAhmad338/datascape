@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 const Footer = () => {
+
   return (
       <footer className="bg-gray-900 py-12 text-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -22,9 +25,9 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
             <ul className="space-y-2">
-              <li><a href="/about" className="hover:text-gray-400">About Us</a></li>
-              <li><a href="/contact" className="hover:text-gray-400">Contact</a></li>
-              <li><a href="/careers" className="hover:text-gray-400">Careers</a></li>
+              <li><Link href="/aboutus" className="hover:text-gray-400">About Us</Link></li>
+              <li><Link href="/contactus" className="hover:text-gray-400">Contact</Link></li>
+              <li><Link href="/careers" className="hover:text-gray-400">Careers</Link></li>
             </ul>
           </div>
         </div>

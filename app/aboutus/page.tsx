@@ -41,10 +41,10 @@ const AboutUs = () => {
                     {['Our Mission', 'Our Vision', 'Our Values'].map((title, index) => (
                         <motion.div
                             key={index}
-                            className="bg-gray-700 bg-opacity-60 p-6 rounded-lg hover:cursor-pointer"
+                            className="bg-white bg-opacity-60 p-6 rounded-lg hover:cursor-pointer"
                         >
-                            <h3 className="text-xl text-white font-semibold mb-4">{title}</h3>
-                            <p className="text-gray-300">
+                            <h3 className="text-xl text-black font-semibold mb-4">{title}</h3>
+                            <p className="text-gray-600 text-md mb-6">
                                 {title === 'Our Mission' && 'Empower businesses to achieve digital excellence through cutting-edge solutions and strategic insights.'}
                                 {title === 'Our Vision' && 'To be a global leader in digital transformation, redefining industries with innovative technology.'}
                                 {title === 'Our Values' && 'Integrity, Innovation, and Impact – the core values that drive our every endeavor.'}
