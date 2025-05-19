@@ -33,13 +33,12 @@ const Process = () => {
         <section className="bg-gray-50 py-20">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-4xl font-bold text-gray-800 mb-12">Our Process</h2>
-                <div className="relative flex justify-between items-center space-x-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                     {steps.map((step, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <div className="text-5xl mb-2 text-indigo-600">{step.icon}</div>
-                        
-                            <h3 className="text-lg font-semibold text-gray-800 mb-1">{step.title}</h3>
-                            <p className="text-gray-600 text-sm max-w-xs">{step.description}</p>
+                        <div key={index} className="flex flex-col items-center p-6 bg-white rounded-lg border border-gray-200 hover:cursor-pointer">
+                            <div className="text-5xl mb-4 text-indigo-600">{step.icon}</div>
+                            <h3 className="text-lg font-semibold text-gray-800 mb-2">{step.title}</h3>
+                            <p className="text-gray-600 text-sm text-center max-w-xs">{step.description}</p>
                         </div>
                     ))}
                 </div>

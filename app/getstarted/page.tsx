@@ -138,7 +138,7 @@ export default function GetStartedPage() {
                 </ul>
                 <button
                   onClick={() => router.push('/contactus')}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                  className="bg-white text-black hover:cursor-pointer px-4 py-2  rounded-lg font-semibold border border-black"
                 >
                   Start Web Project
                 </button>
@@ -176,7 +176,7 @@ export default function GetStartedPage() {
                 </ul>
                 <button
                   onClick={() => router.push('/contactus')}
-                  className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
+                  className="bg-white text-black hover:cursor-pointer px-4 py-2  rounded-lg font-semibold border border-black"
                 >
                   Start Mobile Project
                 </button>
@@ -232,7 +232,8 @@ export default function GetStartedPage() {
                 </ul>
                 <button
                   onClick={() => router.push('/contactus')}
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+                                    className="bg-white text-black hover:cursor-pointer px-4 py-2  rounded-lg font-semibold border border-black"
+
                 >
                   Start Cloud Project
                 </button>

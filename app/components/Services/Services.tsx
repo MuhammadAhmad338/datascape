@@ -40,7 +40,7 @@ const Services = () => {
             <div className="text-center">
                 <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">What We Offer</h2>
                 <h3 className="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">Our Services</h3>
-                <p className="mt-4 max-w-2xl text-lg text-gray-700 mx-auto">
+                <p className="mt-4 max-w-2xl text-lg text-gray-500 mx-auto">
                 Comprehensive digital solutions to help your business thrive in the modern marketplace
                 </p>
             </div>
