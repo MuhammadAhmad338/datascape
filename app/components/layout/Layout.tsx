@@ -2,7 +2,11 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
@@ -12,4 +16,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default Layout; 
