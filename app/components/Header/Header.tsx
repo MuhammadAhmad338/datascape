@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [loading, setLoading] = useState(true);
@@ -34,11 +35,19 @@ const Header = () => {
     setIsLoggedIn(false);
     window.location.href = "/";
   }
-// ...existing code...
+
   return (
     <header className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 shadow-lg py-4">
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-3xl font-extrabold text-white tracking-tight transition-colors">
+        <Link href="/" className="text-3xl font-extrabold text-white tracking-tight transition-colors flex items-center gap-2">
+          <Image 
+            src="/datascape.png"
+            alt="Datascape Logo"
+            width={60}
+            height={40}
+            priority
+            className="object-contain"
+          />
           Datascape
         </Link>
 
