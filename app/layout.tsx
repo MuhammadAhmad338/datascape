@@ -11,10 +11,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: "Datascape",
+  description: "Datascape is a tech company",
   icons: "/datascape.png",
 };
 

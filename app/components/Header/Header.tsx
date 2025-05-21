@@ -54,7 +54,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link href="/" className="text-white hover:text-gray-300 text-lg transition-colors">Home</Link>
-          <Link href="/aboutus" className="text-white hover:text-gray-300 text-lg transition-colors">Aboutus</Link>
+          <Link href="/aboutus" className="text-white hover:text-gray-300 text-lg transition-colors">AboutUs</Link>
           <button
             onClick={toggleServices}
             className={`text-white hover:text-gray-300 hover:cursor-pointer text-lg transition-colors ${showServices ? '' : ''}`}
