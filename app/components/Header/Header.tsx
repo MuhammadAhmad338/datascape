@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-blue-900 via-gray-800 to-gray-900 shadow-lg py-4">
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-3xl font-extrabold text-white tracking-tight transition-colors flex items-center gap-2">
+        <Link href="/" className="text-3xl font-extrabold text-white tracking-tight transition-colors flex items-center ">
           <Image 
             src="/datascape.png"
             alt="Datascape Logo"
