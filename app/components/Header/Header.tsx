@@ -56,12 +56,8 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <Link href="/" className="text-gray-300 hover:text-white text-base transition-colors">Home</Link>
           <Link href="/aboutus" className="text-gray-300 hover:text-white text-base transition-colors">AboutUs</Link>
-          <button
-            onClick={toggleServices}
-            className="text-gray-300 hover:text-white text-base transition-colors"
-          >
-            Services
-          </button>
+          <Link href="/services" className="text-gray-300 hover:text-white text-base transition-colors">Services</Link>
+
           <Link href="/consulting" className="text-gray-300 hover:text-white text-base transition-colors">Consulting</Link>
           <Link href="/contactus" className="text-gray-300 hover:text-white text-base transition-colors">Contact</Link>
 

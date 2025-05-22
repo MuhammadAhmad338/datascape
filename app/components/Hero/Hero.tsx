@@ -1,7 +1,7 @@
 "use client"
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { FaRocket, FaCode, FaServer, FaDatabase, FaCloud, FaMobile } from "react-icons/fa";
 
 const HeroComponent = () => {
@@ -68,21 +68,21 @@ const HeroComponent = () => {
                         <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
                             At Datascape, we specialize in web development, app development, and enterprise applications. Let us help you build robust digital solutions to elevate your business.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center gap-2"
+                                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:cursor-pointer font-medium px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg sm:rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                             >
-                                <FaRocket className="w-5 h-5" />
+                                <FaRocket className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                                 Get Started
                             </motion.button>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 hover:cursor-pointer text-white font-medium px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 rounded-lg sm:rounded-xl shadow-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
                             >
-                                <FaCode className="w-5 h-5" />
+                                <FaCode className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
                                 Learn More
                             </motion.button>
                         </div>
