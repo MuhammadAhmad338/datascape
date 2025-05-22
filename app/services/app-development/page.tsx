@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const AppDevelopment = () => {
     const router = useRouter();
@@ -70,12 +71,12 @@ const AppDevelopment = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="text-center"
                     >
-                        <button
-                            onClick={() => router.push('/contactus')}
-                            className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                        <Link
+                            href="/services/app-development/start-app-project"
+                            className="bg-white text-gray-900 hover:cursor-pointer px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
                         >
                             Start Your App Project
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
             </section>
