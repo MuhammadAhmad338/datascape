@@ -1,185 +1,279 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaBriefcase, FaRocket, FaUsers, FaLightbulb, FaGraduationCap, FaHeart } from "react-icons/fa";
+
+interface JobOpening {
+  id: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  description: string;
+  requirements: string[];
+}
+
+interface Benefit {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
 
 const Careers = () => {
-    const jobListings = [
-        {
-            title: "Frontend Developer",
-            location: "Remote",
-            type: "Full-Time",
-            description: "Build modern user interfaces and optimize performance.",
-            requirements: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-            salary: "$90,000 - $120,000",
-            icon: "💻"
-        },
-        {
-            title: "UI/UX Designer",
-            location: "New York, USA",
-            type: "Contract",
-            description: "Design user-friendly interfaces and collaborate with developers.",
-            requirements: ["Figma", "Adobe XD", "User Research", "Prototyping"],
-            salary: "$80,000 - $100,000",
-            icon: "🎨"
-        },
-        {
-            title: "Backend Developer",
-            location: "San Francisco, USA",
-            type: "Full-Time",
-            description: "Implement server-side logic and data security.",
-            requirements: ["Node.js", "Python", "AWS", "Database Design"],
-            salary: "$100,000 - $130,000",
-            icon: "⚙️"
-        }
-    ];
+  const [selectedJob, setSelectedJob] = useState<string | null>(null);
 
-    return (
-        <div className="min-h-screen bg-[#0A0F1C] text-white">
-            {/* Hero Section with Parallax */}
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070')] bg-cover bg-center bg-fixed"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C]/80 via-[#0A0F1C]/90 to-[#0A0F1C]"></div>
-                <div className="relative z-10 text-center max-w-4xl px-4">
-                    <h1 className="text-7xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                        Join Our Journey
-                    </h1>
-                    <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                        We're not just building products, we're crafting experiences that shape the future of technology.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-6">
-                        <button className="group relative px-8 py-4 hover:cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 rounded-full overflow-hidden">
-                            <span className="relative z-10 text-white font-semibold">Explore Roles</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        </button>
-                        <button className="px-8 py-4 border-2 hover:cursor-pointer border-white/20 rounded-full hover:bg-white/10 transition-all duration-300">
-                            Our Values
-                        </button>
-                    </div>
-                </div>
-            </section>
+  const benefits: Benefit[] = [
+    {
+      icon: FaRocket,
+      title: "Growth Opportunities",
+      description: "Continuous learning and career advancement paths"
+    },
+    {
+      icon: FaUsers,
+      title: "Collaborative Culture",
+      description: "Work with talented individuals in a supportive environment"
+    },
+    {
+      icon: FaLightbulb,
+      title: "Innovation",
+      description: "Freedom to explore new ideas and technologies"
+    },
+    {
+      icon: FaGraduationCap,
+      title: "Learning & Development",
+      description: "Regular training and skill development programs"
+    },
+    {
+      icon: FaHeart,
+      title: "Work-Life Balance",
+      description: "Flexible hours and remote work options"
+    }
+  ];
 
-            {/* Floating Stats */}
-            <section className="relative -mt-32 mb-32">
-                <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {[
-                            { value: "50+", label: "Team Members", color: "from-blue-500 to-blue-600" },
-                            { value: "15+", label: "Countries", color: "from-purple-500 to-purple-600" },
-                            { value: "100+", label: "Projects", color: "from-blue-500 to-blue-600" },
-                            { value: "24/7", label: "Support", color: "from-purple-500 to-purple-600" }
-                        ].map((stat, i) => (
-                            <div key={i} className="bg-[#1A1F2E] rounded-2xl p-6 shadow-xl hover:transform hover:scale-105 transition-all duration-300">
-                                <div className={`text-5xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                                    {stat.value}
-                                </div>
-                                <div className="text-gray-400">{stat.label}</div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+  const jobOpenings: JobOpening[] = [
+    {
+      id: "senior-dev",
+      title: "Senior Software Developer",
+      department: "Engineering",
+      location: "Remote",
+      type: "Full-time",
+      description: "We're looking for an experienced software developer to join our engineering team. You'll be responsible for designing and implementing scalable solutions.",
+      requirements: [
+        "5+ years of software development experience",
+        "Strong knowledge of modern web technologies",
+        "Experience with cloud platforms",
+        "Excellent problem-solving skills"
+      ]
+    },
+    {
+      id: "data-scientist",
+      title: "Data Scientist",
+      department: "Data Science",
+      location: "Hybrid",
+      type: "Full-time",
+      description: "Join our data science team to help build and improve our machine learning models and data analysis pipelines.",
+      requirements: [
+        "3+ years of experience in data science",
+        "Strong background in statistics and machine learning",
+        "Proficiency in Python and data analysis tools",
+        "Experience with big data technologies"
+      ]
+    },
+    {
+      id: "product-manager",
+      title: "Product Manager",
+      department: "Product",
+      location: "Remote",
+      type: "Full-time",
+      description: "Lead product development initiatives and work closely with cross-functional teams to deliver exceptional products.",
+      requirements: [
+        "4+ years of product management experience",
+        "Strong analytical and strategic thinking",
+        "Excellent communication skills",
+        "Experience with agile methodologies"
+      ]
+    }
+  ];
 
-            {/* Job Listings with Timeline */}
-            <section className="py-32">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                        Open Positions
-                    </h2>
-                    <div className="max-w-5xl mx-auto">
-                        {jobListings.map((job, index) => (
-                            <div key={index} className="mb-8 last:mb-0">
-                                <div className="relative group">
-                                    <div className="absolute -left-3 top-0 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-                                    <div className="ml-6 bg-[#1A1F2E] rounded-xl p-6 hover:bg-[#212737] transition-all duration-300 border border-white/5 hover:border-white/10">
-                                        <div className="flex items-start justify-between mb-4">
-                                            <div className="flex items-center gap-4">
-                                                <div className="text-3xl bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-3 rounded-lg">{job.icon}</div>
-                                                <div>
-                                                    <h3 className="text-2xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">{job.title}</h3>
-                                                    <div className="flex items-center gap-2">
-                                                        <p className="text-gray-400 flex items-center gap-1 text-sm">
-                                                            <span className="text-base">📍</span> {job.location}
-                                                        </p>
-                                                        <span className="w-1 h-1 bg-gray-600 rounded-full"></span>
-                                                        <p className="text-gray-400 text-sm">{job.salary}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <span className="px-4 py-1.5 bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-400 rounded-full text-sm font-medium border border-blue-500/20">
-                                                {job.type}
-                                            </span>
-                                        </div>
-                                        <p className="text-gray-300 text-base mb-4 leading-relaxed">{job.description}</p>
-                                        <div className="mb-4">
-                                            <h4 className="text-base font-semibold mb-2 text-white">Requirements</h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {job.requirements.map((req, idx) => (
-                                                    <span key={idx} className="px-3 py-1.5 bg-[#2B3244] rounded-full text-sm font-medium text-gray-300 border border-white/5 hover:border-blue-500/20 transition-colors">
-                                                        {req}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                                            <div className="flex items-center gap-2 text-blue-400">
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                                </svg>
-                                                <span className="font-medium text-sm">Fast-track application</span>
-                                            </div>
-                                            <button className="group relative px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full overflow-hidden">
-                                                <span className="relative z-10 text-white font-semibold text-sm">Apply Now</span>
-                                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Culture Section with Cards */}
-            <section className="py-32 bg-[#10141F]">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-5xl font-bold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                        Life at Datascape
-                    </h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {[
-                            {
-                                icon: "🌱",
-                                title: "Growth & Learning",
-                                text: "Continuous learning opportunities and career development paths",
-                                gradient: "from-green-500 to-blue-500"
-                            },
-                            {
-                                icon: "🎯",
-                                title: "Innovation",
-                                text: "Work on cutting-edge projects and shape the future of tech",
-                                gradient: "from-purple-500 to-pink-500"
-                            },
-                            {
-                                icon: "🤝",
-                                title: "Collaboration",
-                                text: "Work with talented individuals in a supportive environment",
-                                gradient: "from-blue-500 to-purple-500"
-                            }
-                        ].map((item, i) => (
-                            <div key={i} className="group relative">
-                                <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000`}></div>
-                                <div className="relative bg-[#1A1F2E] p-8 rounded-2xl">
-                                    <div className="text-5xl mb-6">{item.icon}</div>
-                                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
-                                    <p className="text-gray-400 leading-relaxed">{item.text}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute top-20 right-20 w-96 h-96 bg-blue-500 rounded-full filter blur-[100px]"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.15, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+            className="absolute bottom-20 left-20 w-96 h-96 bg-indigo-500 rounded-full filter blur-[100px]"
+          />
         </div>
-    );
+
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <span className="inline-block px-4 py-2 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-6">
+              Join Our Team
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Build the Future with{" "}
+              <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
+                Datascape
+              </span>
+            </h1>
+            <p className="text-gray-400 text-lg mb-8">
+              Join us in our mission to transform the digital landscape. We're looking for passionate individuals who want to make a difference.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Join Us?
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              We offer a comprehensive benefits package and a supportive work environment to help you thrive.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-colors"
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                  <benefit.icon className="w-6 h-6 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{benefit.title}</h3>
+                <p className="text-gray-400">{benefit.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Job Openings Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Open Positions
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Explore our current job openings and find the perfect role for you.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {jobOpenings.map((job, index) => (
+              <motion.div
+                key={job.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-colors cursor-pointer"
+                onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{job.title}</h3>
+                    <div className="flex items-center space-x-4 text-sm text-gray-400">
+                      <span>{job.department}</span>
+                      <span>•</span>
+                      <span>{job.location}</span>
+                      <span>•</span>
+                      <span>{job.type}</span>
+                    </div>
+                  </div>
+                  <FaBriefcase className="w-6 h-6 text-blue-400" />
+                </div>
+
+                <AnimatePresence>
+                  {selectedJob === job.id && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-4 pt-4 border-t border-white/10"
+                    >
+                      <p className="text-gray-400 mb-4">{job.description}</p>
+                      <h4 className="text-white font-semibold mb-2">Requirements:</h4>
+                      <ul className="list-disc list-inside text-gray-400 space-y-1">
+                        {job.requirements.map((req, i) => (
+                          <li key={i}>{req}</li>
+                        ))}
+                      </ul>
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="mt-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-2 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                      >
+                        Apply Now
+                      </motion.button>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-2xl p-8 md:p-12 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Don't See the Right Role?
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+              We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
+            </p>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+            >
+              Send Your Resume
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default Careers;
