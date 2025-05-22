@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaRocket, FaCode, FaServer, FaDatabase, FaCloud, FaMobile } from "react-icons/fa";
 
 const HeroComponent = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -11,14 +12,14 @@ const HeroComponent = () => {
     }, []);
                     
     return (
-        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden shadow-2xl">
+        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden">
             {/* Main Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/image.jpg"
                     alt="Hero Background"
                     fill
-                    className="object-cover opacity-20"
+                    className="object-cover opacity-10"
                     priority
                 />
             </div>
@@ -27,21 +28,21 @@ const HeroComponent = () => {
             <div className="absolute inset-0 z-0">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 0.1, scale: 1 }}
+                    animate={{ opacity: 0.15, scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut" }}
-                    className="absolute top-20 right-20 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"
+                    className="absolute top-20 right-20 w-96 h-96 bg-blue-500 rounded-full filter blur-[100px]"
                 />
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 0.1, scale: 1 }}
+                    animate={{ opacity: 0.15, scale: 1 }}
                     transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-                    className="absolute bottom-20 left-20 w-96 h-96 bg-indigo-500 rounded-full filter blur-3xl"
+                    className="absolute bottom-20 left-20 w-96 h-96 bg-indigo-500 rounded-full filter blur-[100px]"
                 />
             </div>
 
             {/* Content Container */}
-            <div className="container mx-auto px-4 py-32 lg:py-44 relative z-10 mb-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     {/* Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -49,88 +50,93 @@ const HeroComponent = () => {
                         transition={{ duration: 1, ease: "easeOut" }}
                         className="text-center lg:text-left"
                     >
-                        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6"
+                        >
+                            <span className="text-blue-400 font-medium">Welcome to Datascape</span>
+                        </motion.div>
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                             Transform Your Business with{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">
                                 Cutting-Edge
                             </span>{" "}
                             Solutions
                         </h1>
-                        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
+                        <p className="text-lg text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
                             At Datascape, we specialize in web development, app development, and enterprise applications. Let us help you build robust digital solutions to elevate your business.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-indigo-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 hover:cursor-pointer"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:shadow-blue-500/25 transition-all duration-300 flex items-center gap-2"
                             >
+                                <FaRocket className="w-5 h-5" />
                                 Get Started
                             </motion.button>
                             <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:cursor-pointer"
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                className="bg-white/5 backdrop-blur-sm border border-white/10 text-white font-medium px-8 py-4 rounded-xl shadow-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                             >
+                                <FaCode className="w-5 h-5" />
                                 Learn More
                             </motion.button>
                         </div>
                     </motion.div>
 
-                    {/* Hero Image */}
+                    {/* Hero Cards */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 50 }}
                         transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="relative w-full h-[400px]">
-                            {/* <Image
-                                src="/images/hero-main.png"
-                                alt="Hero Illustration"
-                                fill
-                                className="object-contain"
-                                priority
-                            /> */}
+                        <div className="grid grid-cols-2 gap-6">
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+                                    <FaCloud className="w-6 h-6 text-blue-400" />
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2">Cloud Solutions</h3>
+                                <p className="text-gray-400 text-sm">Scalable and secure cloud infrastructure for your business needs</p>
+                            </motion.div>
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center mb-4">
+                                    <FaMobile className="w-6 h-6 text-indigo-400" />
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2">Mobile Apps</h3>
+                                <p className="text-gray-400 text-sm">Native and cross-platform mobile applications</p>
+                            </motion.div>
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                                    <FaServer className="w-6 h-6 text-purple-400" />
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2">Web Development</h3>
+                                <p className="text-gray-400 text-sm">Modern and responsive web applications</p>
+                            </motion.div>
+                            <motion.div
+                                whileHover={{ y: -5 }}
+                                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+                            >
+                                <div className="w-12 h-12 rounded-xl bg-pink-500/20 flex items-center justify-center mb-4">
+                                    <FaDatabase className="w-6 h-6 text-pink-400" />
+                                </div>
+                                <h3 className="text-xl font-semibold mb-2">Data Analytics</h3>
+                                <p className="text-gray-400 text-sm">Powerful insights from your business data</p>
+                            </motion.div>
                         </div>
-                        {/* Floating Elements */}
-                        <motion.div
-                            animate={{
-                                y: [0, -20, 0],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                            className="absolute top-10 right-10 w-20 h-20"
-                        >
-                            {/* <Image
-                                src="/images/tech-icon-1.png"
-                                alt="Technology Icon"
-                                fill
-                                className="object-contain"
-                            /> */}
-                        </motion.div>
-                        <motion.div
-                            animate={{
-                                y: [0, 20, 0],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: 1,
-                            }}
-                            className="absolute bottom-10 left-10 w-20 h-20"
-                        >
-                            {/* <Image
-                                src="/images/tech-icon-2.png"
-                                alt="Technology Icon"
-                                fill
-                                className="object-contain"
-                            /> */}
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>
