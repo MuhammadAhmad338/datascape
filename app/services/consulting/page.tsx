@@ -151,13 +151,15 @@ const EnterpriseConsulting = () => {
                             and drive sustainable growth.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <motion.button
+                           <Link href="/contactus">
+                           <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300"
+                                className="bg-gradient-to-r from-indigo-500 to-blue-500 text-white hover:cursor-pointer px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300"
                             >
                                 Schedule a Consultation
                             </motion.button>
+                           </Link>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}

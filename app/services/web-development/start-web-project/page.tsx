@@ -156,7 +156,7 @@ const StartWebProject = () => {
                             <div className="flex justify-center gap-4">
                                 <button
                                     type="submit"
-                                    className="bg-blue-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                                    className="bg-blue-500 text-white hover:cursor-pointer px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
                                 >
                                     Submit Project
                                 </button>

@@ -150,13 +150,15 @@ const WebDevelopment = () => {
                             Let's discuss how we can help you achieve your digital goals. Our team is ready to bring your vision to life.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                          <Link href="/services/web-development/start-web-project">
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                                className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:cursor-pointer px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                             >
                                 Start Your Project
                             </motion.button>
+                          </Link>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}

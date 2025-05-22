@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
-import { FaMobile, FaCode, FaRobot, FaCloud, FaShieldAlt, FaChartLine } from "react-icons/fa";
+ import { FaMobile, FaCode, FaRobot, FaCloud, FaShieldAlt, FaChartLine } from "react-icons/fa";
 import Link from "next/link";
 
 const AppDevelopment = () => {
@@ -151,13 +151,15 @@ const AppDevelopment = () => {
                             the next big thing in mobile.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link href="/services/app-development/start-app-project">
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+                                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:cursor-pointer text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
                             >
                                 Start Your Project
                             </motion.button>
+                        </Link>
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
