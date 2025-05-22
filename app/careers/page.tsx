@@ -36,7 +36,7 @@ const Careers = () => {
         <div className="min-h-screen bg-[#0A0F1C] text-white">
             {/* Hero Section with Parallax */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-[url('/image.jpg')] bg-cover bg-center bg-fixed"></div>
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070')] bg-cover bg-center bg-fixed"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1C]/80 via-[#0A0F1C]/90 to-[#0A0F1C]"></div>
                 <div className="relative z-10 text-center max-w-4xl px-4">
                     <h1 className="text-7xl font-black mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
@@ -46,11 +46,11 @@ const Careers = () => {
                         We're not just building products, we're crafting experiences that shape the future of technology.
                     </p>
                     <div className="flex flex-wrap justify-center gap-6">
-                        <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full overflow-hidden">
+                        <button className="group relative px-8 py-4 hover:cursor-pointer bg-gradient-to-r from-blue-500 to-purple-500 rounded-full overflow-hidden">
                             <span className="relative z-10 text-white font-semibold">Explore Roles</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         </button>
-                        <button className="px-8 py-4 border-2 border-white/20 rounded-full hover:bg-white/10 transition-all duration-300">
+                        <button className="px-8 py-4 border-2 hover:cursor-pointer border-white/20 rounded-full hover:bg-white/10 transition-all duration-300">
                             Our Values
                         </button>
                     </div>
