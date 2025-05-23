@@ -17,7 +17,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
                     {/* Company Info */}
                     <div className="space-y-6">
-                        <motion.h2 
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
@@ -25,7 +25,7 @@ const Footer = () => {
                         >
                             Datascape
                         </motion.h2>
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.1 }}
@@ -33,29 +33,29 @@ const Footer = () => {
                         >
                             Empowering businesses through tailored web development, mobile apps, and enterprise consulting solutions.
                         </motion.p>
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="flex space-x-4"
                         >
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                            <Link href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <FaGithub className="w-5 h-5 text-gray-400 hover:text-white transition-colors" />
-                            </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                            </Link>
+                            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <FaLinkedin className="w-5 h-5 text-gray-400 hover:text-white transition-colors" />
-                            </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                            </Link>
+                            <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <FaTwitter className="w-5 h-5 text-gray-400 hover:text-white transition-colors" />
-                            </a>
-                            <a href="mailto:contact@datascape.com" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
+                            </Link>
+                            <Link href="mailto:contact@datascape.com" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
                                 <FaEnvelope className="w-5 h-5 text-gray-400 hover:text-white transition-colors" />
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
 
                     {/* Services */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
@@ -85,7 +85,7 @@ const Footer = () => {
                     </motion.div>
 
                     {/* Quick Links */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
@@ -115,7 +115,7 @@ const Footer = () => {
                     </motion.div>
 
                     {/* Newsletter */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
@@ -140,7 +140,7 @@ const Footer = () => {
                 </div>
 
                 {/* Copyright */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
