@@ -105,20 +105,25 @@ const Header = () => {
               </>
             ) : (
               <>
-                <motion.button
+               <Link href='/login'>
+               <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                  className="px-4 py-2 hover:cursor-pointer text-slate-300 hover:text-white font-medium transition-colors"
                 >
                   Login
                 </motion.button>
-                <motion.button
+               </Link>
+               <Link href='/signup'>
+               <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                  className="px-4 py-2 bg-gradient-to-r hover:cursor-pointer from-blue-500 to-indigo-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                 >
                   Sign Up
                 </motion.button>
+               </Link>
+               
               </>
             )}
           </div>
@@ -207,20 +212,26 @@ const Header = () => {
                   </>
                 ) : (
                   <>
+                    <Link href='/login'> 
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="w-full px-4 py-2 text-slate-300 hover:text-white hover:cursor-pointer font-medium transition-colors"
                     >
                       Login
                     </motion.button>
-                    <motion.button
+                    </Link>
+                  <Link href='/signup'>
+                  <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:cursor-pointer rounded-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300"
                     >
                       Sign Up
                     </motion.button>
+                  </Link>
                   </>
                 )}
               </div>
