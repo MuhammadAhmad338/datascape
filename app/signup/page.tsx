@@ -56,7 +56,7 @@ const Signup = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 relative overflow-hidden pt-28 pb-28">
             {/* Decorative Elements */}
             <div className="absolute inset-0 z-0">
                 <motion.div

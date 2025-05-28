@@ -25,7 +25,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden py-20">
+        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden py-20 pt-32">
             {/* Decorative Elements */}
             <div className="absolute inset-0 z-0">
                 <motion.div

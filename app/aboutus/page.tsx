@@ -11,7 +11,7 @@ const AboutUs = () => {
     }, []);
 
     return (
-        <section className="min-h-screen flex flex-col py-20 lg:py-32 text-white overflow-hidden relative bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900">
+        <section className="min-h-screen flex flex-col py-20 lg:py-32 text-white overflow-hidden relative bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 pt-28">
             {/* Decorative Elements */}
             <div className="absolute inset-0 z-0">
                 <motion.div

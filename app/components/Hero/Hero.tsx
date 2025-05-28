@@ -12,7 +12,7 @@ const HeroComponent = () => {
     }, []);
                     
     return (
-        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden">
+        <section className="relative min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-blue-900 text-white overflow-hidden pt-20">
             {/* Main Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image

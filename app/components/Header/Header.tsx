@@ -10,8 +10,6 @@ const Header = () => {
   const [loading, setLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showServices, setShowServices] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -48,35 +46,35 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               href="/" 
-              className="text-slate-300 hover:text-white font-medium transition-colors relative group"
+              className="text-slate-300 hover:text-white font-bold transition-colors relative group"
             >
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
             </Link>
             <Link 
               href="/aboutus" 
-              className="text-slate-300 hover:text-white font-medium transition-colors relative group"
+              className="text-slate-300 hover:text-white font-bold transition-colors relative group"
             >
               About Us
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
             </Link>
             <Link 
               href="/services" 
-              className="text-slate-300 hover:text-white font-medium transition-colors relative group"
+              className="text-slate-300 hover:text-white font-bold transition-colors relative group"
             >
               Services
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
             </Link>
             <Link 
               href="/consulting" 
-              className="text-slate-300 hover:text-white font-medium transition-colors relative group"
+              className="text-slate-300 hover:text-white font-bold transition-colors relative group"
             >
               Consulting
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
             </Link>
             <Link 
               href="/contactus" 
-              className="text-slate-300 hover:text-white font-medium transition-colors relative group"
+              className="text-slate-300 hover:text-white font-bold transition-colors relative group"
             >
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300" />
@@ -90,7 +88,7 @@ const Header = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                  className="px-4 py-2 text-slate-300 hover:text-white font-bold transition-colors"
                 >
                   Get Started
                 </motion.button>
@@ -98,7 +96,7 @@ const Header = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={logOut}
-                  className="px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                  className="px-4 py-2 text-slate-300 hover:text-white font-bold transition-colors"
                 >
                   Log Out
                 </motion.button>
@@ -109,7 +107,7 @@ const Header = () => {
                <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-4 py-2 hover:cursor-pointer text-slate-300 hover:text-white font-medium transition-colors"
+                  className="px-4 py-2 hover:cursor-pointer text-slate-300 hover:text-white font-bold transition-colors"
                 >
                   Login
                 </motion.button>
@@ -154,35 +152,35 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <Link 
                 href="/" 
-                className="text-slate-300 hover:text-white font-medium transition-colors py-2"
+                className="text-slate-300  hover:text-white font-bold transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/aboutus" 
-                className="text-slate-300 hover:text-white font-medium transition-colors py-2"
+                className="text-slate-300 hover:text-white font-bold transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link 
                 href="/services" 
-                className="text-slate-300 hover:text-white font-medium transition-colors py-2"
+                className="text-slate-300 hover:text-white font-bold transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 href="/consulting" 
-                className="text-slate-300 hover:text-white font-medium transition-colors py-2"
+                className="text-slate-300 hover:text-white font-bold transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Consulting
               </Link>
               <Link 
                 href="/contactus" 
-                className="text-slate-300 hover:text-white font-medium transition-colors py-2"
+                className="text-slate-300 hover:text-white font-bold transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -194,7 +192,7 @@ const Header = () => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                      className="w-full px-4 py-2 text-slate-300 hover:text-white font-bold transition-colors"
                     >
                       Get Started
                     </motion.button>
@@ -205,7 +203,7 @@ const Header = () => {
                         logOut();
                         setIsMenuOpen(false);
                       }}
-                      className="w-full px-4 py-2 text-slate-300 hover:text-white font-medium transition-colors"
+                      className="w-full px-4 py-2 text-slate-300 hover:text-white font-bold transition-colors"
                     >
                       Log Out
                     </motion.button>
@@ -217,7 +215,7 @@ const Header = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setIsMenuOpen(false)}
-                      className="w-full px-4 py-2 text-slate-300 hover:text-white hover:cursor-pointer font-medium transition-colors"
+                      className="w-full px-4 py-2 text-slate-300 hover:text-white hover:cursor-pointer font-bold transition-colors"
                     >
                       Login
                     </motion.button>
